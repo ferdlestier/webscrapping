@@ -8,6 +8,7 @@ alertprice = float ( input ( "please enter the price you need to be notify : $" 
 print("Your link is: "+ producturl)
 print ( f"Thank You, You'll be alerted if the price drop below ${alertprice}" )
 
+# creating function to run the price check
 def checkPrice(producturl) :
     try:
         driver = webdriver.Chrome ()
@@ -19,6 +20,7 @@ def checkPrice(producturl) :
     except:
         print('The price is still over $'+str(alertprice))
 
+# creating function to send a message via Telegram
 def send_message(bot_message) :
     bot_token = '5425140158:AAElr_Dopfux7S1ForcKzbTfY9iHSKsKL38'
     bot_chatID = 'BotTest'

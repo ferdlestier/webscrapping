@@ -13,8 +13,8 @@ def checkPrice(producturl) :
     try:
         driver = webdriver.Chrome ()
         driver.get ("https://www.adidas.com/us/harden-vol.-6-shoes/GW1712.html?forceSelSize=M%209%20%2F%20W%2010")
-        producttitle=driver.find_element(By.XPATH,'/html/body/div[2]/div/div[1]/div[1]/div/div/div[2]/div[2]/div[2]/div/h1/span').text
-        productprice=driver.find_element(By.XPATH,'/html/body/div[2]/div/div[1]/div[1]/div/div/div[2]/div[2]/div[2]/div/div[2]/div[1]/div/div/div').text
+        producttitle=driver.find_element(By.XPATH,'/html/body/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[1]/h1/span').text
+        productprice=driver.find_element(By.XPATH,'/html/body/div[2]/div/div[1]/div[1]/div/div/div[2]/div/div[1]/div[2]/div/div/div/div').text
         prodprice = productprice.strip('$')
         if float(prodprice) < alertprice:
             print(f'{producttitle} price has dropped below alert price, its price now is {productprice}')
